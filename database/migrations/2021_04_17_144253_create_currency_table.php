@@ -13,11 +13,13 @@ class CreateCurrencyTable extends Migration
      */
     public function up()
     {
-        Schema::create('CURRENCY', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->decimal('CURRENCY_ID',8,0);
             $table->longText('CURRENCY_TITLE');
             $table->binary('CURRENCY_PICTURE');
         });
+        DB::statement("ALTER TABLE currencies MODIFY CURRENCY_PICTURE LONGBLOB");
+
     }
 
     /**
