@@ -12,12 +12,12 @@
           @csrf
             <input name="CURRENCY_ID" value="{{$currency->CURRENCY_ID ?? ''}}" class="form-control form-control-lg" type="text" placeholder="CURRENCY_ID">
             <br>
-            <input name="CURRENCY_TITLE" value="{{$currency->TITLE ?? ''}}" class="form-control form-control-lg" type="text" placeholder="CURRENCY_TITLE">
+            <input name="CURRENCY_TITLE" value="{{$currency->CURRENCY_TITLE ?? ''}}" class="form-control form-control-lg" type="text" placeholder="CURRENCY_TITLE">
             <br>
             <div class="form-group">
               <label>CURRENCY_PICTURE</label>
               @if(isset($currency))
-              <img class="card-img-top" src="data:image/jpg;base64,{{$currency->CURRENCY_PICTURE}}">
+              <img class="card-img-top" style="width: 25%" src="data:image/jpg;base64,{{$currency->CURRENCY_PICTURE}}">
               @endif
               <input name="CURRENCY_PICTURE" type="file" class="form-control-file">
             </div>
