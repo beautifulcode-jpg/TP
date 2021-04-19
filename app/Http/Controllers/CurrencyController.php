@@ -11,23 +11,35 @@ class CurrencyController extends Controller
         $collection = Currency::all();
         return view('currency.list',compact('collection'));
     }
-    public function create(){
+    public function showForm(){
         return view('currency.form');
     }
-    public function edit(Currency $record){
-        dd($record);
-        return view('currency.form',compact('record'));
+    public function create(Request $request){
+        $currency = new Currency;
+        $currency->CURRENCY_ID = request('CURRENCY_ID');
+        $currency->CURRENCY_TITLE = request('CURRENCY_TITLE');
+        $currency->CURRENCY_PICTURE = base64_encode(file_get_contents($request->file('CURRENCY_PICTURE')->pat‌​h()));
+        $currency->save();
+        $collection = Currency::all();
+        return view('currency.list',compact('collection'));
     }
     public function store(){
         // store
         $collection = Currency::all();
-        dd($collection);
         return view('currency.list',compact('collection'));
     }
-    public function delete(Currency $record){
-        // delete
+    public function edit(Currency $currency){
+        return view('currency.form',compact('currency'));
+    }
+    public function update(Currency $record){
+        //update
         $collection = Currency::all();
-        dd($collection);
+        return view('currency.list',compact('collection'));
+    }
+    
+    public function delete(Currency $currency){
+        $currency->delete();
+        $collection = Currency::all();
         return view('currency.list',compact('collection'));
     }
 }
