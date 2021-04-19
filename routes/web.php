@@ -22,5 +22,5 @@ Route::get('/currency', [CurrencyController::class, 'list']);
 Route::get('/currency/new', [CurrencyController::class, 'showForm']);
 Route::post('/currency/new', [CurrencyController::class, 'create']);
 Route::get('/currency/edit/{currency:CURRENCY_ID}', [CurrencyController::class, 'edit']);
-Route::post('/currency/store', [CurrencyController::class, 'store']);
+Route::post('/currency/store/{currency:CURRENCY_ID}', [CurrencyController::class, 'store']);
 Route::get('/currency/delete/{currency:CURRENCY_ID}', [CurrencyController::class, 'delete']);

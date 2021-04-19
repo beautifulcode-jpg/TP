@@ -18,13 +18,16 @@ class CurrencyController extends Controller
         $currency = new Currency;
         $currency->CURRENCY_ID = request('CURRENCY_ID');
         $currency->CURRENCY_TITLE = request('CURRENCY_TITLE');
-        $currency->CURRENCY_PICTURE = base64_encode(file_get_contents($request->file('CURRENCY_PICTURE')->pat‌​h()));
+        $currency->CURRENCY_PICTURE = base64_encode(file_get_contents($request->file('CURRENCY_PICTURE')));
         $currency->save();
         $collection = Currency::all();
         return view('currency.list',compact('collection'));
     }
-    public function store(){
-        // store
+    public function store(Request $request, Currency $currency){
+        $currency->CURRENCY_ID = request('CURRENCY_ID');
+        $currency->CURRENCY_TITLE = request('CURRENCY_TITLE');
+        $currency->CURRENCY_PICTURE = base64_encode(file_get_contents($request->file('CURRENCY_PICTURE')));
+        $currency->save();
         $collection = Currency::all();
         return view('currency.list',compact('collection'));
     }

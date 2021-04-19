@@ -10,7 +10,7 @@ class Currency extends Model
     use HasFactory;
     
     protected $primaryKey = 'CURRENCY_ID';
-
+    public $timestamps = false;
     protected $fillable = [
         'CURRENCY_ID',
         'CURRENCY_TITLE',
