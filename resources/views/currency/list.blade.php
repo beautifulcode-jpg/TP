@@ -3,6 +3,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body style="display: flex;padding:25px;">
+        <a href="/currency/new" class="btn btn-success">Ajouter une monnaie</a>
+
         @foreach ($collection as $item)
         <div class="card" style="margin:25px;padding:25px;width:25%;">
             <img class="card-img-top" src="data:image/jpg;base64,{{$item->CURRENCY_PICTURE}}" alt="Card image cap">
