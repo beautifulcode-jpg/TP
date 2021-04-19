@@ -17,7 +17,7 @@
             <div class="form-group">
               <label>CURRENCY_PICTURE</label>
               @if(isset($currency))
-              <img class="card-img-top" src="data:image/jpg;base64,{{$item->CURRENCY_PICTURE}}">
+              <img class="card-img-top" src="data:image/jpg;base64,{{$currency->CURRENCY_PICTURE}}">
               @endif
               <input name="CURRENCY_PICTURE" type="file" class="form-control-file">
             </div>
